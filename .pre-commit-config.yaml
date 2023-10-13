@@ -1,6 +1,6 @@
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v4.5.0
     hooks:
     -   id: check-yaml
     -   id: requirements-txt-fixer
@@ -11,15 +11,17 @@ repos:
         language_version: python3
 
 -   repo: https://github.com/psf/black
-    rev: 22.10.0
+    rev: 23.9.1
     hooks:
     -   id: black
         exclude: ^tests/
 
--   repo: https://gitlab.com/pycqa/flake8
-    rev: 5.0.4
-    id: flake8
-    args: [
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+    - id: flake8
+      exclude: ^tests/
+      args: [
             '--per-file-ignores=__init__.py:F401',
             '--max-line-length=88',
             '--ignore=E1,W1,E2,W2,E4,W4,E5,W5' # Handled by black
@@ -27,10 +29,8 @@ repos:
 
 # Sorts imports
 -   repo: https://github.com/pycqa/isort
-    rev: 5.10.1
+    rev: 5.12.0
     hooks:
-    -   id: isort
-        name: isort (python)
-        args: ["--profile", "black"]
-
-
+    - id: isort
+    name: isort (python)
+    args: ["--profile", "black", "--filter-files"]
