@@ -1,3 +1,11 @@
+com! Py ! python3 %  " run the current python file with command :Py
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Fast saving
+nmap <leader>w :w!<cr>
 set nocompatible              " be iMproved, required
 filetype off 
 " Trying to copy paste to mac but it did not work
@@ -17,6 +25,7 @@ set autoindent            " auto-indent
 set expandtab
 set tabstop=4           " tab size is 4
 set scrolloff=999       " the cursor is centered vertically if posible
+
 
 " Annoying typos
 command WQ wq
