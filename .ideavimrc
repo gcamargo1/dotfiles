@@ -41,3 +41,7 @@ Plug 'tpope/vim-commentary'
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
+
+# Allow with insert mode to shift arrow-right
+set selectmode=key
+set keymodel+=startsel,stopsel,stopselect
