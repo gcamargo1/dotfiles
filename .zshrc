@@ -1,3 +1,4 @@
+R_HOME="/opt/homebrew/Cellar/r/4.3.1/lib/R/library"
 set bell-style visible
 source ~/.passwords
 alias pip=pip3
