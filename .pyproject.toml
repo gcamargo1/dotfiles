@@ -10,3 +10,8 @@ addopts = "--doctest-modules"
 
 [tool.isort]
 profile = "black"
+
+[tool.ruff]
+extend-select = [
+"E/W"
+]

@@ -92,3 +92,4 @@ alias python3_brew="/opt/homebrew/bin/python3"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+
