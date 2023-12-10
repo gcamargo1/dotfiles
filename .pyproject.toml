@@ -8,10 +8,83 @@ docs = "mkdocs serve"
 pythonpath = "."
 addopts = "--doctest-modules"
 
-[tool.isort]
-profile = "black"
-
+# Ruff config
 [tool.ruff]
-extend-select = [
-"E/W"
+extend-exclude = ["tests"]
+
+[tool.ruff.lint]
+preview = true
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # mccabe (code complexity)
+#    "C90",
+    # Pyflakes
+    "F",
+    # pep8-naming,
+    "N",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # Others
+    "YTT",
+    "ANN",
+    "S", # bandit
+    "FBT",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "T10",
+    "FA",
+    "ISC",
+    "ICN",
+    "G",
+    "INP",
+    "PIE",
+#    "T20", # print finder
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "ERA",
+    "PD",
+    "PGH",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "PERF",
+    "FURB",
+    "LOG",
+    "RUF"
 ]
+ignore = ["ANN202",
+    "S101",
+    "RET504",
+    "PD901",
+    "PLR0912",
+    "PLR0913",
+    "ISC001", # conflicts with COM812
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
