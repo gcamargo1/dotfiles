@@ -13,42 +13,12 @@ repos:
     -   id: debug-statements
         language_version: python3
 
-#-   repo: https://github.com/psf/black
-#    rev: 23.9.1
-#    hooks:
-#    -   id: black
-#        exclude: ^tests/
-
--   repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-    - id: flake8
-      exclude: ^tests/
-      args: [
-            '--per-file-ignores=__init__.py:F401',
-            '--max-line-length=88',
-            '--ignore=E1,W1,E2,W2,E4,W4,E5,W5' # Handled by black
-        ]
-
-# Sorts imports
--   repo: https://github.com/pycqa/isort
-    rev: 5.12.0
-    hooks:
-    - id: isort
-    name: isort (python)
-    args: ["--profile", "black", "--filter-files"]
-
--   repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
-    hooks:
-    -   id: pyupgrade
-
 - repo: https://github.com/astral-sh/ruff-pre-commit
   # Ruff version.
-  rev: v0.1.6
+  rev: v0.1.7
   hooks:
     # Run the linter.
     - id: ruff
-      args: [ --fix ]
+      args: [ --fix]
     # Run the formatter.
     - id: ruff-format
