@@ -61,7 +61,7 @@ select = [
     "TCH",
     "INT",
     "ARG",
-    "PTH",
+#    "PTH",  # change from strings to path obj
     "TD",
     "FIX",
     "ERA",
@@ -84,6 +84,13 @@ ignore = ["ANN202",
     "PLR0912",
     "PLR0913",
     "ISC001", # conflicts with COM812
+    "FURB101", # not complain with open
+    "PLW1514", # not complain with open
+    "PTH123", # not complain with open
+    "TRY003",
+    "B023", # affects pandas lambda apply
+    "PD015", # let's use pd.merge
+    "COM812", # conficts stuff
 ]
 
 [tool.ruff.lint.pydocstyle]
