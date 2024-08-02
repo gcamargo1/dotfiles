@@ -1,5 +1,5 @@
 [project]
-name = "project name"
+name = "project-name"
 dynamic = ["version"]
 description = "Add your description here"
 authors = [
@@ -31,7 +31,7 @@ addopts = "--doctest-modules"
 
 [tool.taskipy.tasks]
 docs = "mkdocs serve"
-test = "pytest -s -x --cov=project_name_with_underscores -vv"
+test = "pytest -s -x --cov=project_name -vv"
 coverage_report = "coverage html && open htmlcov/index.html"
 
 # Ruff config
@@ -141,6 +141,3 @@ check = "pyright"
 test = "rye test"
 all = { chain = ["fmt", "lint", "check", "test"] }
 
-docs = "mkdocs serve"
-test_cov = "pytest -s -x --cov=project_name_with_underscores -vv"
-coverage_report = "coverage html && open htmlcov/index.html"
