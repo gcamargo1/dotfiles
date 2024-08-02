@@ -30,13 +30,15 @@ pythonpath = "."
 addopts = "--doctest-modules"
 
 [tool.taskipy.tasks]
-coverage = "coverage html && open htmlcov/index.html"
 docs = "mkdocs serve"
-#test = "pytest -s -x --cov=pylme -vv"
+test = "pytest -s -x --cov=project_name_with_underscores -vv"
+coverage_report = "coverage html && open htmlcov/index.html"
 
 # Ruff config
 [tool.ruff]
-extend-exclude = ["tests"]
+exclude = ["tests"]
+line-length = 88
+indent-width = 4
 
 [tool.ruff.lint]
 preview = true
@@ -116,8 +118,12 @@ ignore = ["ANN202",
     "TRY003",
     "B023", # affects pandas lambda apply
     "PD015", # let's use pd.merge
-    "COM812", # conficts stuff
+    "COM812", # conflicts stuff
 ]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/{tests,docs,tools}/*" = ["PLR2004", "ANN201"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
@@ -134,3 +140,7 @@ lint = "rye lint --fix"
 check = "pyright"
 test = "rye test"
 all = { chain = ["fmt", "lint", "check", "test"] }
+
+docs = "mkdocs serve"
+test_cov = "pytest -s -x --cov=project_name_with_underscores -vv"
+coverage_report = "coverage html && open htmlcov/index.html"
