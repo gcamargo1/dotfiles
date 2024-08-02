@@ -1,0 +1,31 @@
+# MkDocs template
+site_name: Project Name
+repo_url: https://github.com/gcamargo1/project-name
+repo_name: gcamargo1/project-name
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.tasklist
+
+extra_css:
+  - stylesheets/extra.css
+
+watch:
+   - project_name
+
+plugins:
+- macros
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [project_name]
+
+extra:
+  commands:
+    run: project-name
+
